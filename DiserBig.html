@@ -1,0 +1,40 @@
+<html>
+<HEAD>
+    <TITLE>Daftar Disertasi UPT Perpustakaan IPB</TITLE>
+   </HEAD>
+   <BODY>
+    <XML ID="dsoDiser" SRC="Diser.xml"></XML>
+    <H2>Daftar Disertasi UPT Perpustakaan IPB</H2>
+    <BUTTON ONCLICK="DiserTable.firstPage()">
+    |&lt; Hal Pertama
+    </BUTTON>
+    &nbsp;&nbsp;
+    <BUTTON ONCLICK="DiserTable.previousPage()">
+    &lt; Hal Sebelum
+    </BUTTON>
+    &nbsp;&nbsp;
+    <BUTTON ONCLICK="DiserTable.nextPage()">
+    Hal berikut &gt;
+    </BUTTON>
+    &nbsp;&nbsp;
+    <BUTTON ONCLICK="DiserTable.lastPage()">
+    Hal akhir &gt;|
+    </BUTTON>
+    <p>
+    <TABLE ID="DiserTable" DATASRC="#dsoDiser"
+    DATAPAGESIZE="5" BORDER="1" CELLPADDING="5">
+    <THEAD>
+    <TH>Judul</TH>
+    <TH>Pengarang</TH>
+    <TH>Pembimbing</TH>
+    <TH>Keterangan</TH>
+    </THEAD>
+    <TR ALIGN="left">
+    <TD><SPAN DATAFLD="Title" STYLE="font-style:normal"></SPAN></TD>
+    <TD><SPAN DATAFLD="Author1" STYLE="font-weight:bold"></SPAN></TD>
+    <TD><SPAN DATAFLD="Author2"></SPAN></TD>
+    <TD><SPAN DATAFLD="Publisher"></SPAN></TD>
+    </TR>
+    </TABLE>
+   </BODY> 
+   </html>

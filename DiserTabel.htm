@@ -1,0 +1,44 @@
+<HTML>
+    <HEAD>
+     <TITLE>Daftar Disertasi IPB</TITLE>
+	 <script>
+            
+            var xmlData = document.getElementById("dsoDiser");
+            var fields = xmlData.getElementsByTagName("table");
+            fetch(xmlData)
+            .then(response => response.text())
+        .then(xmlString => $.parseXML(xmlString))
+        .then(data => console.log(data))
+            // for(var i = 0; i < fields.length; i++)
+            // {
+            //     console.log(fields[i].firstChild.data);
+            // }
+        </script>
+    </HEAD>
+        <BODY>
+            
+                <!-- alternative content used when the inclusion fails -->
+                <XML ID="dsoDiser" SRC="Diser.xml"></XML>
+            <H2>Daftar Disertasi IPB</H2>
+            
+            <table id="MainTable">
+                <tbody id="BodyRows"></tbody>
+                </table>
+            <TABLE DATASRC="Diser.xml" BORDER="1" CELLPADDING="5">
+            <THEAD>
+            <TH>Judul</TH>
+            <TH>Pengarang</TH>
+            <TH>Pembimbing</TH>
+            <TH>Keterangan</TH>
+            </THEAD>
+            <TR ALIGN="left">
+            <TD><SPAN DATAFLD="Title"
+            STYLE="font-style:italic"></SPAN></TD>
+            <TD><SPAN DATAFLD="Author1"></SPAN></TD>
+            <TD><SPAN DATAFLD="Author2"></SPAN></TD>
+            <TD><SPAN DATAFLD="Publisher"></SPAN></TD>
+            </TR>
+            </TABLE>
+        </BODY>
+        
+</HTML>
